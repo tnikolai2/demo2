@@ -34,7 +34,7 @@ class MyRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        cfg c= context.getBean(cfg.class);
-        c= context.getBean(cfg.class);  //Error
+        cfg c= context.getBean(cfg.class); //ok
+        c= context.getBean(cfg.class);     //Error
     }
 }
