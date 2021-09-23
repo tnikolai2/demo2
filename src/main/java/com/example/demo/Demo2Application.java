@@ -20,9 +20,8 @@ public class Demo2Application {
 @Configuration
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 class cfg{
-    public String xx;
     public cfg(@Value("${xx}") String xx) {
-        this.xx=xx;
+        System.out.println(xx);
     }
 }
 
@@ -36,7 +35,6 @@ class MyRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         cfg c= context.getBean(cfg.class);
-        System.out.println(c.xx);
         c= context.getBean(cfg.class);  //Error
     }
 }
